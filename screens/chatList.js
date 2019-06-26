@@ -13,8 +13,8 @@ import firebase from 'react-native-firebase';
 import Moment from 'moment';
 
 
-
-// let itemsRef = db.ref('Users/');
+                             
+// let itemsRef = db.ref('Users/');§
 
 export default class ChatList extends React.Component {
     state = {
@@ -28,7 +28,7 @@ export default class ChatList extends React.Component {
     };
 
     async componentDidMount() {
-        this._subscribe = this.props.navigation.addListener('didFocus', () => {
+        this._subscribe = this.props.navigation.addListener('did                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Focus', () => {
             this.loadMessageAndUser();
             //Put your Data loading function here instead of my this.LoadData()
         });
@@ -43,11 +43,12 @@ export default class ChatList extends React.Component {
     loadMessageAndUser() {
         const result = SyncStorage.get('user_email');
         const db = firebase.firestore();
-        const user_message = [];
+        
     
         var overAllMessage = 0;
         var overAllMessageUnRead = 0;
-        db.collection('Chatslist').doc('room').onSnapshot((snapshot) => {
+        // db.collection('Chatslist').doc('room').onSnapshot((snapshot) => {
+          
             db.collection('users').onSnapshot((snapshot) => {
                 const user_docs = snapshot.docs.map((docSnapshot) => ({
                     id: docSnapshot.id,
@@ -59,7 +60,9 @@ export default class ChatList extends React.Component {
                     user_docs.splice(index, 1);
                 }
                 var a = 0;
+                const user_message = [];
                 user_docs.forEach(element => {
+                    console.log(user_message)
                     if (this.state.currentUser.id < element.id) {
                         this.state.id = this.state.currentUser.id + '&' + element.id;
                     }
@@ -77,7 +80,6 @@ export default class ChatList extends React.Component {
                             var msgUnRead = 0;
                             var count = 0;
                             element.messages.forEach((ele) => {
-
                                 overAllMessage++;
                                 ele.createdAt = new Date(ele.createdAt.seconds * 1000);
                                 if (ele.user._id != this.state.currentUser.id && ele.readed == 0) {
@@ -107,12 +109,11 @@ export default class ChatList extends React.Component {
                         if (a === user_docs.length) {
                             console.log(user_message)
                             this.setState({ items: user_message, fullData: user_message, overAllMessage: overAllMessage, overAllMessageUnRead: overAllMessageUnRead });
-                            firebaseSvc.checkPermission();
                         }
                     })
                 })
             })
-        })
+        // })
     }
 
     handleSearch = (text) => {

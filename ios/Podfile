@@ -49,6 +49,10 @@ pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
 pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
 
+pod 'React', :path => '../node_modules/react-native', :subspecs => [    
+    'RCTPushNotification',
+  ]
+  
 post_install do |installer|
     installer.pods_project.targets.each do |target|
       if target.name == "React"

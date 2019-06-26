@@ -17,32 +17,40 @@ class FirebaseSvc {
   userList = (email, name) => {
 
     // ********************************************** FireStore ********************************************
-
-    const db = firebase.firestore();
-    db.collection('users').onSnapshot((snapshot) => {
-      const docs = snapshot.docs.map((docSnapshot) => ({
-        id: docSnapshot.id,
-        data: docSnapshot.data()
-      }));
-      if (docs.length == 0) {
-        const userRef = db.collection('users').add({
-          fullname: name,
-          email: email
-        });
-      }
-      else {
-        let users = Object.values(docs);
-
-        let value = users.findIndex(x => x.data.email.trim().toLowerCase() == email.trim().toLowerCase());
-        if (value === -1) {
+    const device_id = SyncStorage.get('fcmToken');
+    if(device_id){
+      const db = firebase.firestore();
+      db.collection('users').onSnapshot((snapshot) => {
+        const docs = snapshot.docs.map((docSnapshot) => ({
+          id: docSnapshot.id,
+          data: docSnapshot.data()
+        }));
+        if (docs.length == 0) {
           const userRef = db.collection('users').add({
             fullname: name,
-            email: email
+            email: email,
+            device_id: device_id
           });
         }
-      }
-
-    })
+        else {
+          let users = Object.values(docs);
+  
+          let value = users.findIndex(x => x.data.email.trim().toLowerCase() == email.trim().toLowerCase());
+          if (value === -1) {
+            const userRef = db.collection('users').add({
+              fullname: name,
+              email: email,
+              device_id: device_id
+            });
+          }
+        }
+  
+      })
+    }
+    else{
+      this.checkPermission();
+    }
+   
 
 
     // **********************************************Real time database ********************************************
@@ -171,7 +179,7 @@ class FirebaseSvc {
       msgData.push(message[0]);
     })
     setTimeout(() => {
-      db.collection(`Chatslist/`).doc(`room/${id}/${key}`).update({ message: msgData });
+      db.collection('Chatslist').doc('room').collection(id).doc(key).update({ message: msgData });
     }, 1000);
 
   }
@@ -210,9 +218,9 @@ class FirebaseSvc {
   async checkPermission() {
     const messaging = await firebase.messaging();
     const fcmToken = messaging.getToken();
-    alert(fcmToken);
+    console.log(fcmToken);
     const enabled = await firebase.messaging().hasPermission();
-    alert(enabled);
+    console.log(enabled);
     if (enabled) {
       this.getToken();
     } else {
@@ -224,14 +232,18 @@ class FirebaseSvc {
 
   async getToken() {
     let fcmToken = await SyncStorage.get('fcmToken');
-    alert(fcmToken);
+    console.log(fcmToken);
     if (!fcmToken) {
       fcmToken = await firebase.messaging().getToken();
-     alert(fcmToken);
+      SyncStorage.set('fcmToken', fcmToken);
+      this.userList();
+     console.log(fcmToken);
       if (fcmToken) {
+        
         // user has a device token
         await SyncStorage.set('fcmToken', fcmToken);
-        alert(fcmToken);
+        console.log(fcmToken);
+        this.userList();
       }
     }
   }
@@ -243,10 +255,13 @@ class FirebaseSvc {
       // User has authorised
       this.getToken();
     } catch (error) {
+      firebase.messaging().requestPermission();
       // User has rejected permissions
-      alert('permission rejected');
+      // alert('permission rejected');
     }
   }
+
+  
 
 }
 

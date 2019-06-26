@@ -4,11 +4,10 @@ import { GiftedChat } from 'react-native-gifted-chat';
 import HeaderComponent from "../components/headerComponents";
 import SyncStorage from 'sync-storage';
 import firebaseSvc from '../FirebaseSvc';
-// import * as firebase from 'firebase';
 import firebase from 'react-native-firebase';
-// import firestore from 'firebase/firestore';
 
 
+const fucntions = firebase.functions();
 export default class Chat extends React.Component {
 
   state = {
@@ -19,6 +18,7 @@ export default class Chat extends React.Component {
     msgloaded: false,
     inputText: {}
   }
+
   componentDidMount() {
     var id;
     var key;
@@ -62,7 +62,7 @@ export default class Chat extends React.Component {
               //   db.collection(`Chatslist/`).doc(`room/${id}/${key}`).update({ message: message});
               // }
               this.setState({ messages: message, loaded: true, msgloaded: true })
-              db.collection(`Chatslist/`).doc(`room/${id}/${key}`).update({ message: message});
+              db.collection('Chatslist').doc('room').collection(id).doc(key).update({ message: message });
             }
           })
 
@@ -79,11 +79,32 @@ export default class Chat extends React.Component {
     })
   }
 
+
+
   onSend(messages = []) {
+    console.log(this.state.to_user);
     messages[0]._id = this.state.to_user.id;
     messages[0].readed = 0;
     firebaseSvc.sendMsg(this.state.user, this.state.to_user, messages);
-
+    fetch('http://172.16.1.131:3000/', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        device_id: this.state.to_user.data.device_id,
+        message: messages[0].text,
+        title: this.state.to_user.data.fullname,
+        to_user: this.state.user,
+      }),
+    }).then((response) => response.json())
+      .then((responseJson) => {
+        console.log("working")
+      })
+      .catch((error) => {
+        console.log("not working")
+      });
   }
 
   render() {
@@ -94,7 +115,7 @@ export default class Chat extends React.Component {
         />
         <ImageBackground source={require("../images/chat-bg.png")} style={{ width: '100%', zIndex: -1, height: '100%' }}>
           {this.state.loaded === true ? (
-            
+
             <GiftedChat
               loadEarlier={false}
               messages={this.state.messages}
@@ -106,7 +127,7 @@ export default class Chat extends React.Component {
                 avatar: 'https://placeimg.com/140/140/any',
               }}
             />
-           
+
           ) : (
               <Text style={{ marginLeft: '40%', marginTop: 100 }}>No Text found</Text>
             )}

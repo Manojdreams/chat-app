@@ -30,6 +30,9 @@
 		1D875DA66E55411B9529B7E4 /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 854C7DFBAC7944A288EAB6EC /* Poppins-Regular.otf */; };
 		1F93A66BA6C94D8BBC3B3022 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25601EBE5A314D3D96A65C4A /* FontAwesome5_Brands.ttf */; };
 		273C68EDF6D945B8A647F3AE /* Poppins-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95DB6068B0B741439879DDC4 /* Poppins-MediumItalic.otf */; };
+		2A31935F22B3B84800F68A05 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A31935E22B3B84800F68A05 /* libBVLinearGradient.a */; };
+		2A31936122B3B86100F68A05 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A31936022B3B86100F68A05 /* libRNGestureHandler.a */; };
+		2A443E2822BB9946007B616F /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A443E0922BB989F007B616F /* libRCTPushNotification.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -48,8 +51,6 @@
 		3D232AEB43F54D659EDA8D85 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57E83C17727F48B6AF26B2B6 /* FontAwesome5_Regular.ttf */; };
 		4014BD6BF7714973AB4ADA19 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12F19F943E6D4E9FB3C55ACD /* Feather.ttf */; };
 		4433196322B0CFD4000A6CAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4433193C22B0CFD4000A6CAD /* GoogleService-Info.plist */; };
-		446A4C1E22B1761300D0226A /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 446A4C1B22B175A800D0226A /* libRNGestureHandler.a */; };
-		446A4C8B22B17BD900D0226A /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 446A4C8822B17BCB00D0226A /* libBVLinearGradient.a */; };
 		47430952F2F74360AA0506EA /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1262A6E2644B47E9BE434F96 /* Poppins-Medium.otf */; };
 		546F8773F2F9475A98F89BCC /* Poppins-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A93D439B8244EB6BEFD7F8D /* Poppins-Bold.otf */; };
 		58284CCDF5E1488297FE6834 /* Poppins-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7D44A0BAACE434B9E37D983 /* Poppins-LightItalic.otf */; };
@@ -183,6 +184,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNFirebase;
+		};
+		2A443E0822BB989F007B616F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A443DF522BB989F007B616F /* RCTPushNotification.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTPushNotification;
+		};
+		2A443E0A22BB989F007B616F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A443DF522BB989F007B616F /* RCTPushNotification.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D05745F1DE6004600184BB4;
+			remoteInfo = "RCTPushNotification-tvOS";
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -426,6 +441,11 @@
 		25601EBE5A314D3D96A65C4A /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		27049AE9E0314A27AC9F3E19 /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
 		27760E6A229B6FDF00F5F127 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2A31935E22B3B84800F68A05 /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A31936022B3B86100F68A05 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A443DF522BB989F007B616F /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
+		2A443E2922BB9D7C007B616F /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
+		2A5B28D722B374D1009C6BB5 /* RNFirebaseStarter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = RNFirebaseStarter.entitlements; path = RNFirebaseStarter/RNFirebaseStarter.entitlements; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* RNFirebaseStarter-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RNFirebaseStarter-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* RNFirebaseStarter-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RNFirebaseStarter-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -491,8 +511,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				446A4C8B22B17BD900D0226A /* libBVLinearGradient.a in Frameworks */,
-				446A4C1E22B1761300D0226A /* libRNGestureHandler.a in Frameworks */,
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
@@ -506,7 +524,10 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				2A443E2822BB9946007B616F /* libRCTPushNotification.a in Frameworks */,
 				66F583A38C047519D1E18159 /* libPods-RNFirebaseStarter.a in Frameworks */,
+				2A31936122B3B86100F68A05 /* libRNGestureHandler.a in Frameworks */,
+				2A31935F22B3B84800F68A05 /* libBVLinearGradient.a in Frameworks */,
 				8AEB10120B9847F8905B7DA1 /* libRNFirebase.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,6 +656,7 @@
 		13B07FAE1A68108700A75B9A /* RNFirebaseStarter */ = {
 			isa = PBXGroup;
 			children = (
+				2A5B28D722B374D1009C6BB5 /* RNFirebaseStarter.entitlements */,
 				27760E6A229B6FDF00F5F127 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -686,9 +708,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2A443DF622BB989F007B616F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A443E0922BB989F007B616F /* libRCTPushNotification.a */,
+				2A443E0B22BB989F007B616F /* libRCTPushNotification-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2A443E2922BB9D7C007B616F /* PushKit.framework */,
+				2A31936022B3B86100F68A05 /* libRNGestureHandler.a */,
+				2A31935E22B3B84800F68A05 /* libBVLinearGradient.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
@@ -738,6 +772,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				2A443DF522BB989F007B616F /* RCTPushNotification.xcodeproj */,
 				446A4C8222B17BCB00D0226A /* BVLinearGradient.xcodeproj */,
 				446A4BEF22B175A700D0226A /* RNGestureHandler.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
@@ -942,6 +977,14 @@
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 7X5XQLPR38;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -998,6 +1041,10 @@
 				{
 					ProductGroup = 00C302D41ABCB9D200DB3ED1 /* Products */;
 					ProjectRef = 00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */;
+				},
+				{
+					ProductGroup = 2A443DF622BB989F007B616F /* Products */;
+					ProjectRef = 2A443DF522BB989F007B616F /* RCTPushNotification.xcodeproj */;
 				},
 				{
 					ProductGroup = 139105B71AF99BAD00B5F7CC /* Products */;
@@ -1128,6 +1175,20 @@
 			fileType = archive.ar;
 			path = libRNFirebase.a;
 			remoteRef = 2759477D2261A42A00BA95C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A443E0922BB989F007B616F /* libRCTPushNotification.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTPushNotification.a;
+			remoteRef = 2A443E0822BB989F007B616F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A443E0B22BB989F007B616F /* libRCTPushNotification-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTPushNotification-tvOS.a";
+			remoteRef = 2A443E0A22BB989F007B616F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */ = {
@@ -1440,15 +1501,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RNFirebaseStarter-checkManifestLockResult.txt",
 			);
@@ -1462,15 +1519,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RNFirebaseStarter-tvOSTests-checkManifestLockResult.txt",
 			);
@@ -1485,7 +1538,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNFirebaseStarter/Pods-RNFirebaseStarter-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-RNFirebaseStarter/Pods-RNFirebaseStarter-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -1494,7 +1547,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNFirebaseStarter/Pods-RNFirebaseStarter-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RNFirebaseStarter/Pods-RNFirebaseStarter-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F2D1C0B3AA54F23E0D104D24 /* [CP] Check Pods Manifest.lock */ = {
@@ -1502,15 +1555,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RNFirebaseStarter-tvOS-checkManifestLockResult.txt",
 			);
@@ -1644,13 +1693,15 @@
 			baseConfigurationReference = D8E13BB553BB18534EEFFDDE /* Pods-RNFirebaseStarter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RNFirebaseStarter/RNFirebaseStarter.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 7X5XQLPR38;
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase",
 				);
 				INFOPLIST_FILE = RNFirebaseStarter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1671,12 +1722,14 @@
 			baseConfigurationReference = B2121FE3F0701D7C33F213D3 /* Pods-RNFirebaseStarter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RNFirebaseStarter/RNFirebaseStarter.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7X5XQLPR38;
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase",
 				);
 				INFOPLIST_FILE = RNFirebaseStarter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

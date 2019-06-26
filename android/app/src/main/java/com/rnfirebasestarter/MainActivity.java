@@ -1,4 +1,4 @@
-package com.invertase.rnfirebasestarter;
+package com.rnfirebasestarter;
 
 import com.facebook.react.ReactActivity;
 

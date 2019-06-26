@@ -35,39 +35,40 @@ export default class Login extends React.Component {
 
   onPressLogin = async () => {
     this.showLoading();
-    fetch('https://stage-api-customer-2.engage-bot.asia/accounts/login', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password,
-      }),
-    }).then((response) => response.json())
-      .then((responseJson) => {
-        this.hideLoading();
-        if (responseJson.statusCode != 400) {
-          this.state.data = responseJson;
-          const val = firebaseSvc.userList(this.state.data.email, this.state.data.name);
-    // firebaseSvc.userList(this.state.email, this.state.password);
+    // fetch('https://stage-api-customer-2.engage-bot.asia/accounts/login', {
+    //   method: 'POST',
+    //   headers: {
+    //     Accept: 'application/json',
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     email: this.state.email,
+    //     password: this.state.password,
+    //   }),
+    // }).then((response) => response.json())
+    //   .then((responseJson) => {
+    //     this.hideLoading();
+    //     if (responseJson.statusCode != 400) {
+    //       this.state.data = responseJson;
+          // const val = firebaseSvc.userList(this.state.data.email, this.state.data.name);
+    firebaseSvc.userList(this.state.email, this.state.password);
     SyncStorage.set('user_email', this.state.email);
     SyncStorage.set('login', 'true');
     this.loginSuccess();
-      }
-      if (responseJson.statusCode == 400) {
-        this.loginFailed();
-      }
-    })
-    .catch((error) => {
-      this.hideLoading();
-      alert(error);
-    });
+    //   }
+    //   if (responseJson.statusCode == 400) {
+    //     this.loginFailed();
+    //   }
+    // })
+    // .catch((error) => {
+    //   this.hideLoading();
+    //   alert(error);
+    // });
   };
 
   loginSuccess = () => {
     console.log('login successful, navigate to chat.');
+    // firebaseSvc.checkPermission();
     this.hideLoading();
     this.props.navigation.navigate('ChatList');
   };
